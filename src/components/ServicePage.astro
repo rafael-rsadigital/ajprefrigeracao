@@ -38,7 +38,7 @@ const jsonLd = [
 ---
 <SiteLayout
   title={`${service.title} em São José dos Campos | A. J. P. Refrigeração`}
-  description={`${service.title} em São José dos Campos e região. Saiba como solicitar atendimento da A. J. P. Refrigeração pelo WhatsApp.`}
+  description={`${service.title} em São José dos Campos e região. Consulte a A. J. P. Refrigeração e solicite atendimento pelo WhatsApp.`}
   canonicalPath={canonicalPath}
   keywords={[`${service.title} em São José dos Campos`, service.shortTitle, 'A. J. P. Refrigeração', 'São José dos Campos']}
   jsonLd={jsonLd}
@@ -51,7 +51,7 @@ const jsonLd = [
       <p class="lede">{service.summary}</p>
       <div class="hero-actions">
         <a class="button button--primary" href={primaryWhatsApp} target="_blank" rel="noreferrer">Solicitar atendimento <span aria-hidden="true">↗</span></a>
-        <a class="button button--secondary" href="#duvidas">Ver dúvidas frequentes</a>
+        <a class="button button--secondary" href="#duvidas">Perguntas frequentes</a>
       </div>
     </div>
   </section>
@@ -60,37 +60,35 @@ const jsonLd = [
     <div class="container service-layout">
       <article class="service-content">
         <p>{service.description}</p>
-        <h2>Quando este serviço pode ajudar</h2>
-        <p>Descreva o que está acontecendo com o equipamento e informe onde o atendimento seria realizado. Essas informações ajudam a orientar o próximo passo sem promessas ou diagnósticos antecipados.</p>
+        <h2>Quando solicitar {service.shortTitle.toLowerCase()}</h2>
         <ul class="fact-list">
           {service.problems.map((problem) => <li>{problem}</li>)}
         </ul>
 
-        <h2>O que a A. J. P. Refrigeração informa</h2>
-        <p>O serviço é realizado externamente, diretamente no endereço do cliente. A disponibilidade para o local e a necessidade apresentada deve ser confirmada pelo WhatsApp.</p>
+        <h2>Serviços realizados</h2>
         <ul class="fact-list">
           {service.highlights.map((highlight) => <li>{highlight}</li>)}
         </ul>
 
         <div id="duvidas">
-          <h2>Dúvidas frequentes</h2>
+          <h2>Perguntas frequentes</h2>
           <FAQ items={service.faqs} />
         </div>
       </article>
 
-      <aside class="service-aside" aria-label="Solicite atendimento">
+      <aside class="service-aside" aria-label="Contato">
         <div class="aside-card aside-card--accent">
-          <h3>Fale sobre o seu equipamento</h3>
-          <p>Envie uma mensagem com o serviço desejado, uma breve descrição e a localização em São José dos Campos ou região.</p>
+          <h3>Solicite atendimento</h3>
+          <p>Informe o equipamento, o serviço desejado e seu bairro em São José dos Campos.</p>
           <div class="hero-actions">
             <a class="button button--on-dark" href={primaryWhatsApp} target="_blank" rel="noreferrer">WhatsApp 1 ↗</a>
             <a class="button button--secondary" href={secondaryWhatsApp} target="_blank" rel="noreferrer">WhatsApp 2 ↗</a>
           </div>
         </div>
         <div class="aside-card">
-          <h3>Veja também</h3>
+          <h3>Outros serviços</h3>
           <ul class="bullet-list">
-            {Object.values(serviceBySlug).filter((other) => other.slug !== service.slug).slice(0, 3).map((other) => <li><a href={`/${other.slug}/`}>{other.shortTitle}</a></li>)}
+            {Object.values(serviceBySlug).filter((other) => other.slug !== service.slug).map((other) => <li><a href={`/${other.slug}/`}>{other.shortTitle}</a></li>)}
             <li><a href="/area-de-atendimento/">Área de atendimento</a></li>
           </ul>
         </div>
@@ -102,11 +100,11 @@ const jsonLd = [
     <div class="container cta-band__inner">
       <div>
         <h2>Precisa de {service.shortTitle.toLowerCase()}?</h2>
-        <p>Fale com a A. J. P. Refrigeração e explique o que você precisa.</p>
+        <p>Entre em contato com a A. J. P. Refrigeração.</p>
       </div>
       <div class="cta-actions">
         <a class="button button--on-dark" href={primaryWhatsApp} target="_blank" rel="noreferrer">Abrir WhatsApp ↗</a>
-        <a class="button button--secondary" href="/">Voltar ao início</a>
+        <a class="button button--secondary" href="/">Início</a>
       </div>
     </div>
   </section>
