@@ -1,0 +1,16 @@
+{
+  "name": "A. J. P. Refrigeração",
+  "short_name": "AJP Refrigeração",
+  "description": "Refrigeração e ar-condicionado em São José dos Campos.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7faf8",
+  "theme_color": "#092b3c",
+  "icons": [{
+    "src": "/favicon.svg",
+    "sizes": "any",
+    "type": "image/svg+xml",
+    "purpose": "any maskable"
+  }]
+}

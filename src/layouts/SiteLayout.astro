@@ -1,0 +1,100 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { company } from '../data/site';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  keywords?: string[];
+  jsonLd?: Record<string, unknown>[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonicalPath = Astro.url.pathname,
+  keywords = [],
+  jsonLd = [],
+  noindex = false,
+} = Astro.props;
+
+const canonical = new URL(canonicalPath, company.url).toString();
+const socialImage = new URL('/favicon.svg', company.url).toString();
+const organizationId = `${company.url}/#organization`;
+const websiteId = `${company.url}/#website`;
+
+const baseSchemas = [
+  {
+    '@type': ['HVACBusiness', 'Organization'],
+    '@id': organizationId,
+    name: company.name,
+    url: `${company.url}/`,
+    taxID: company.cnpj,
+    telephone: '+55 12 99617-5371',
+    sameAs: [company.instagramUrl],
+    areaServed: {
+      '@type': 'City',
+      name: company.city,
+      containedInPlace: { '@type': 'State', name: 'São Paulo' },
+    },
+    contactPoint: [
+      { '@type': 'ContactPoint', telephone: '+55 12 99617-5371', contactType: 'customer service', areaServed: 'BR', availableLanguage: 'pt-BR' },
+      { '@type': 'ContactPoint', telephone: '+55 12 98851-7684', contactType: 'customer service', areaServed: 'BR', availableLanguage: 'pt-BR' },
+    ],
+  },
+  {
+    '@type': 'WebSite',
+    '@id': websiteId,
+    name: company.name,
+    url: `${company.url}/`,
+    inLanguage: 'pt-BR',
+    publisher: { '@id': organizationId },
+  },
+];
+
+const graph = [...baseSchemas, ...jsonLd].map((item) => ({ '@context': 'https://schema.org', ...item }));
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#092b3c" />
+    <meta name="description" content={description} />
+    {keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+    {noindex && <meta name="robots" content="noindex,follow" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <title>{title}</title>
+
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={company.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:alt" content={`${company.name} em São José dos Campos`} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Ir para o conteúdo</a>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+    <WhatsAppButton />
+    <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })}></script>
+  </body>
+</html>

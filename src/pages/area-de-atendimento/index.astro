@@ -1,0 +1,46 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { company, regions, whatsAppUrl } from '../../data/site';
+
+const breadcrumbs = [{ label: 'Início', href: '/' }, { label: 'Área de atendimento' }];
+const primaryWhatsApp = whatsAppUrl(company.whatsappPrimary, 'Olá! Acessei a página de área de atendimento da A. J. P. Refrigeração e gostaria de confirmar atendimento para o meu endereço.');
+const jsonLd = [{
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbs.map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.label, item: item.href ? `${company.url}${item.href}` : `${company.url}/area-de-atendimento/` })),
+}];
+---
+<SiteLayout
+  title="Área de atendimento em São José dos Campos | A. J. P."
+  description="Conheça a área principal de atendimento da A. J. P. Refrigeração em São José dos Campos e regiões de referência para confirmar pelo WhatsApp."
+  canonicalPath="/area-de-atendimento/"
+  keywords={['área de atendimento refrigeração SJC', 'técnico de ar-condicionado São José dos Campos', 'refrigeração São José dos Campos']}
+  jsonLd={jsonLd}
+>
+  <section class="page-hero">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbs} />
+      <p class="eyebrow">Atendimento local · Vale do Paraíba</p>
+      <h1>Área de atendimento em São José dos Campos</h1>
+      <p class="lede">A A. J. P. Refrigeração atua em São José dos Campos e região, com atendimento externo diretamente no endereço do cliente.</p>
+      <div class="hero-actions"><a class="button button--primary" href={primaryWhatsApp} target="_blank" rel="noreferrer">Confirmar meu endereço ↗</a><a class="button button--secondary" href="/#servicos">Ver serviços</a></div>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head"><div class="section-heading"><p class="section-kicker">Referência inicial</p><h2>Regiões e bairros para orientar a conversa.</h2></div><p>A lista abaixo organiza referências de São José dos Campos. Ela não substitui a confirmação de disponibilidade para o endereço informado.</p></div>
+      <div class="region-grid">
+        {regions.map((region) => <div class="region-card"><h3>{region.label}</h3><ul>{region.places.map((place) => <li>{place}</li>)}</ul></div>)}
+      </div>
+      <div class="coverage-note">Antes de combinar o serviço, informe seu bairro e endereço pelo WhatsApp. A cobertura efetiva deve ser confirmada diretamente com a A. J. P. Refrigeração.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split split--equal">
+      <div><p class="section-kicker">Atendimento sem loja</p><h2>O serviço vai até o endereço do cliente.</h2></div>
+      <div class="section-copy"><p>A empresa não possui estabelecimento físico aberto ao público. Por isso, esta página não apresenta endereço de loja ou ponto de atendimento.</p><p>Para solicitar instalação, manutenção, higienização, conserto de geladeira ou conserto de freezer, fale pelos canais de WhatsApp e descreva onde o atendimento seria realizado.</p><div class="hero-actions"><a class="button button--primary" href={primaryWhatsApp} target="_blank" rel="noreferrer">Falar pelo WhatsApp ↗</a><a class="button button--secondary" href="/">Voltar ao início</a></div></div>
+    </div>
+  </section>
+</SiteLayout>

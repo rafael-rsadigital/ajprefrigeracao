@@ -1,0 +1,10 @@
+{
+  "routes": [
+    { "path": "/", "title": "A. J. P. Refrigeração" },
+    { "path": "/instalacao-de-ar-condicionado/", "title": "Instalação de ar-condicionado" },
+    { "path": "/manutencao-de-ar-condicionado/", "title": "Manutenção de ar-condicionado" },
+    { "path": "/higienizacao-de-ar-condicionado/", "title": "Higienização de ar-condicionado" },
+    { "path": "/conserto-de-geladeira-e-freezer/", "title": "Conserto de geladeira e freezer" },
+    { "path": "/area-de-atendimento/", "title": "Área de atendimento" }
+  ]
+}

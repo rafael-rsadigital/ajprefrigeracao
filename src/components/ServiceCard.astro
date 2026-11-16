@@ -1,0 +1,11 @@
+---
+import type { Service } from '../data/site';
+interface Props { service: Service; index: number }
+const { service, index } = Astro.props;
+---
+<article class={`service-card service-card--${service.accent}`}>
+  <span class="service-card__number">0{index + 1} · {service.eyebrow}</span>
+  <h3>{service.title}</h3>
+  <p>{service.summary}</p>
+  <a class="service-card__link" href={`/${service.slug}/`}>Conheça o serviço <span aria-hidden="true">→</span></a>
+</article>

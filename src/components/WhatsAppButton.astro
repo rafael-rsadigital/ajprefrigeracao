@@ -1,0 +1,8 @@
+---
+import { company, whatsAppUrl } from '../data/site';
+const href = whatsAppUrl(company.whatsappPrimary, 'Olá! Acessei o site da A. J. P. Refrigeração e gostaria de solicitar atendimento.');
+---
+<a class="whatsapp-float" href={href} target="_blank" rel="noreferrer" aria-label="Solicitar atendimento pelo WhatsApp">
+  <span class="whatsapp-dot" aria-hidden="true">↗</span>
+  <span>WhatsApp</span>
+</a>

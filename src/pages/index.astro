@@ -1,0 +1,138 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import FAQ from '../components/FAQ.astro';
+import { company, homepageFaqs, regions, services, whatsAppUrl } from '../data/site';
+
+const primaryWhatsApp = whatsAppUrl(company.whatsappPrimary, 'Olá! Acessei o site da A. J. P. Refrigeração e gostaria de solicitar atendimento em São José dos Campos.');
+const jsonLd = [
+  ...services.map((service) => ({
+    '@type': 'Service',
+    '@id': `${company.url}/${service.slug}/#service`,
+    name: service.title,
+    serviceType: service.title,
+    description: service.description,
+    url: `${company.url}/${service.slug}/`,
+    provider: { '@id': `${company.url}/#organization` },
+    areaServed: { '@type': 'City', name: company.city, containedInPlace: { '@type': 'State', name: 'São Paulo' } },
+  })),
+  {
+    '@type': 'FAQPage',
+    mainEntity: homepageFaqs.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })),
+  },
+];
+---
+<SiteLayout
+  title="Refrigeração e ar-condicionado em São José dos Campos"
+  description="Instalação, manutenção e higienização de ar-condicionado, além de conserto de geladeiras e freezers em São José dos Campos e região."
+  canonicalPath="/"
+  keywords={['refrigeração em São José dos Campos', 'ar-condicionado em SJC', 'conserto de geladeira', 'conserto de freezer', 'A. J. P. Refrigeração']}
+  jsonLd={jsonLd}
+>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">A. J. P. Refrigeração · SJC e região</p>
+        <h1 id="hero-title">Refrigeração e ar-condicionado em São José dos Campos</h1>
+        <p class="lede">Instalação, manutenção e higienização de ar-condicionado, além de conserto de geladeiras e freezers em São José dos Campos e região.</p>
+        <div class="hero-actions">
+          <a class="button button--primary" href={primaryWhatsApp} target="_blank" rel="noreferrer">Solicitar atendimento <span aria-hidden="true">↗</span></a>
+          <a class="button button--secondary" href="#servicos">Ver serviços <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="hero-note"><span aria-hidden="true"></span> Atendimento externo, diretamente no endereço do cliente.</p>
+      </div>
+      <div class="hero-visual" aria-label="Ilustração abstrata de fluxo de ar e refrigeração" role="img">
+        <span class="float-label float-label--one">clima · cuidado</span>
+        <div class="cooling-card">
+          <div class="cooling-top"><span>service / 01</span><span class="cooling-status">disponível no contato</span></div>
+          <div class="unit"><span class="unit-core" aria-hidden="true"></span><span class="air-lines" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <div class="cooling-bottom"><div><strong>Equipamento</strong><span>avaliação inicial</span></div><div><strong>SJC · SP</strong><span>atendimento externo</span></div></div>
+        </div>
+        <span class="float-label float-label--two">ar em movimento ↗</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint" id="sobre" aria-labelledby="sobre-title">
+    <div class="container split">
+      <div>
+        <p class="section-kicker">01 · sobre a empresa</p>
+        <h2 id="sobre-title">Cuidado técnico para o que mantém sua rotina em movimento.</h2>
+      </div>
+      <div class="section-copy">
+        <p>A A. J. P. Refrigeração atende São José dos Campos e região com serviços de refrigeração e climatização realizados no endereço do cliente.</p>
+        <p>O site reúne informações objetivas para você identificar o serviço, explicar a necessidade e iniciar o contato pelo WhatsApp. A disponibilidade do atendimento é confirmada diretamente com a empresa.</p>
+        <ul class="fact-list">
+          <li>Atuação principal em São José dos Campos — SP.</li>
+          <li>Atendimento externo, sem loja aberta ao público.</li>
+          <li>Dois canais de WhatsApp para solicitar informações.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="servicos" aria-labelledby="servicos-title">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="section-kicker">02 · serviços</p>
+          <h2 id="servicos-title">O que você precisa resolver?</h2>
+        </div>
+        <p>Escolha o serviço mais próximo da sua necessidade e encontre uma orientação direta para pedir atendimento.</p>
+      </div>
+      <div class="grid-3">
+        {services.map((service, index) => <ServiceCard service={service} index={index} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark" aria-labelledby="process-title">
+    <div class="container split split--equal">
+      <div>
+        <p class="section-kicker" style="color: #a9f0ce;">03 · próximo passo</p>
+        <h2 id="process-title" style="color: #fff;">Atendimento começa com uma boa descrição.</h2>
+        <p class="lede" style="color: rgba(255,255,255,.68);">Conte o que aconteceu com o equipamento e onde o serviço será realizado. A confirmação é feita pelo contato.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="step__number">01 / mensagem</span><h3 style="color: #fff;">Fale pelo WhatsApp</h3><p>Escolha um dos números e informe qual serviço você procura.</p></div>
+        <div class="step"><span class="step__number">02 / contexto</span><h3 style="color: #fff;">Explique a necessidade</h3><p>Descreva o equipamento, o problema percebido e a localização.</p></div>
+        <div class="step"><span class="step__number">03 / confirmação</span><h3 style="color: #fff;">Combine o atendimento</h3><p>A disponibilidade para o endereço é confirmada diretamente pela empresa.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint" aria-labelledby="area-title">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="section-kicker">04 · área de atendimento</p>
+          <h2 id="area-title">São José dos Campos como ponto de partida.</h2>
+        </div>
+        <p>As regiões abaixo são referências iniciais para a conversa. Confirme a disponibilidade do atendimento no seu endereço.</p>
+      </div>
+      <div class="region-grid">
+        {regions.map((region) => <div class="region-card"><h3>{region.label}</h3><ul>{region.places.slice(0, 4).map((place) => <li>{place}</li>)}</ul></div>)}
+      </div>
+      <div class="coverage-note">A empresa não possui estabelecimento físico aberto ao público. O atendimento é externo, diretamente no endereço do cliente, mediante confirmação pelo WhatsApp.</div>
+      <div class="hero-actions"><a class="button button--secondary" href="/area-de-atendimento/">Ver área de atendimento completa <span aria-hidden="true">→</span></a></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="faq-title">
+    <div class="container split split--equal">
+      <div>
+        <p class="section-kicker">05 · perguntas frequentes</p>
+        <h2 id="faq-title">Respostas para decidir o próximo passo.</h2>
+        <p class="lede">Informação objetiva para encontrar o serviço certo e iniciar o contato com mais clareza.</p>
+      </div>
+      <FAQ items={homepageFaqs} />
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container cta-band__inner">
+      <div><h2>Precisa de refrigeração ou climatização em SJC?</h2><p>Envie uma mensagem e explique o que você precisa.</p></div>
+      <div class="cta-actions"><a class="button button--on-dark" href={primaryWhatsApp} target="_blank" rel="noreferrer">Falar pelo WhatsApp ↗</a><a class="button button--secondary" href={company.instagramUrl} target="_blank" rel="noreferrer">Instagram ↗</a></div>
+    </div>
+  </section>
+</SiteLayout>
