@@ -28,23 +28,41 @@ const socialImage = new URL('/social-card.svg', company.url).toString();
 const organizationId = `${company.url}/#organization`;
 const websiteId = `${company.url}/#website`;
 
+const areaServed = [
+  { '@type': 'City', name: company.city, containedInPlace: { '@type': 'State', name: 'São Paulo' } },
+  ...[
+    'Jardim Satélite', 'Bosque dos Eucaliptos', 'Parque Industrial', 'Jardim Oriente',
+    'Campo dos Alemães', 'Jardim Morumbi', 'Parque Interlagos', 'Santana',
+    'Alto da Ponte', 'Jardim Telespark', 'Vila Paiva', 'Altos de Santana',
+    'Centro', 'Vila Ema', 'Jardim Esplanada', 'São Dimas', 'Jardim Apolo',
+    'Jardim Paulista', 'Jardim Aquarius', 'Urbanova', 'Jardim das Indústrias',
+    'Jardim Colinas', 'Vista Verde', 'Novo Horizonte', 'Eugênio de Melo',
+    'Jardim São Vicente', 'Jardim Motorama',
+  ].map((name) => ({ '@type': 'Place', name: `${name}, ${company.city} - SP` })),
+];
+
 const baseSchemas = [
   {
-    '@type': ['HVACBusiness', 'Organization'],
+    '@type': 'HVACBusiness',
     '@id': organizationId,
     name: company.name,
+    legalName: company.name,
     url: `${company.url}/`,
     taxID: company.cnpj,
     telephone: '+55 12 99617-5371',
+    image: socialImage,
     sameAs: [company.instagramUrl],
-    areaServed: {
-      '@type': 'City',
-      name: company.city,
-      containedInPlace: { '@type': 'State', name: 'São Paulo' },
-    },
+    areaServed,
+    knowsAbout: [
+      'Instalação de ar-condicionado',
+      'Manutenção de ar-condicionado',
+      'Higienização de ar-condicionado',
+      'Conserto de geladeiras',
+      'Conserto de freezers',
+    ],
     contactPoint: [
-      { '@type': 'ContactPoint', telephone: '+55 12 99617-5371', contactType: 'customer service', areaServed: 'BR', availableLanguage: 'pt-BR' },
-      { '@type': 'ContactPoint', telephone: '+55 12 98851-7684', contactType: 'customer service', areaServed: 'BR', availableLanguage: 'pt-BR' },
+      { '@type': 'ContactPoint', telephone: '+55 12 99617-5371', contactType: 'customer service', areaServed: 'BR', availableLanguage: 'Portuguese' },
+      { '@type': 'ContactPoint', telephone: '+55 12 98851-7684', contactType: 'customer service', areaServed: 'BR', availableLanguage: 'Portuguese' },
     ],
   },
   {
@@ -55,9 +73,19 @@ const baseSchemas = [
     inLanguage: 'pt-BR',
     publisher: { '@id': organizationId },
   },
+  {
+    '@type': 'WebPage',
+    '@id': `${canonical}#webpage`,
+    url: canonical,
+    name: title,
+    description,
+    inLanguage: 'pt-BR',
+    isPartOf: { '@id': websiteId },
+    about: { '@id': organizationId },
+  },
 ];
 
-const graph = [...baseSchemas, ...jsonLd].map((item) => ({ '@context': 'https://schema.org', ...item }));
+const graph = [...baseSchemas, ...jsonLd];
 ---
 <!doctype html>
 <html lang="pt-BR">
@@ -85,7 +113,7 @@ const graph = [...baseSchemas, ...jsonLd].map((item) => ({ '@context': 'https://
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={`${company.name} em São José dos Campos`} />
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
