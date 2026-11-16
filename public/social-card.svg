@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">A. J. P. Refrigeração — São José dos Campos</title>
+  <desc id="desc">Card social com a marca A. J. P. Refrigeração e os serviços de refrigeração e ar-condicionado em São José dos Campos.</desc>
+  <rect width="1200" height="630" fill="#092b3c"/>
+  <circle cx="1060" cy="95" r="260" fill="none" stroke="#2f7fbd" stroke-opacity=".18" stroke-width="2"/>
+  <circle cx="1060" cy="95" r="190" fill="none" stroke="#1d9b72" stroke-opacity=".35" stroke-width="2"/>
+  <circle cx="1060" cy="95" r="116" fill="none" stroke="#f5c94a" stroke-opacity=".75" stroke-width="3"/>
+  <path d="M84 96h70" stroke="#1d9b72" stroke-width="12" stroke-linecap="round"/>
+  <path d="M84 124h94" stroke="#f5c94a" stroke-width="12" stroke-linecap="round"/>
+  <path d="M84 152h50" stroke="#2f7fbd" stroke-width="12" stroke-linecap="round"/>
+  <text x="84" y="235" fill="#a9f0ce" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="5">A. J. P. REFRIGERAÇÃO</text>
+  <text x="84" y="330" fill="#ffffff" font-family="Arial, sans-serif" font-size="62" font-weight="800">Refrigeração e</text>
+  <text x="84" y="400" fill="#ffffff" font-family="Arial, sans-serif" font-size="62" font-weight="800">ar-condicionado</text>
+  <text x="84" y="486" fill="#d7e9e4" font-family="Arial, sans-serif" font-size="30">São José dos Campos e região</text>
+  <rect x="84" y="540" width="290" height="4" rx="2" fill="#f5c94a"/>
+  <text x="400" y="550" fill="#8eb3c1" font-family="Arial, sans-serif" font-size="18" letter-spacing="2">INSTALAÇÃO · MANUTENÇÃO · HIGIENIZAÇÃO</text>
+</svg>

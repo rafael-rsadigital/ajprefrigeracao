@@ -43,7 +43,7 @@ As fotos reais serão reutilizadas quando existirem no repositório. Como o repo
 
 ## Conteúdo e SEO
 
-Cada página terá um único H1, título e descrição exclusivos, canonical absoluto, Open Graph, Twitter Card, idioma `pt-BR`, breadcrumbs visíveis e links internos contextuais. O layout emitirá Organization/HVACBusiness sem endereço, WebSite, Service, BreadcrumbList e FAQPage somente quando a FAQ estiver visível na página. `areaServed` ficará centrado em São José dos Campos e os bairros serão apresentados como regiões de referência a confirmar no contato, nunca como promessa automática.
+Cada página terá um único H1, título e descrição exclusivos, canonical absoluto, Open Graph, Twitter Card, idioma `pt-BR` e links internos contextuais; as páginas internas terão breadcrumbs visíveis. O layout emitirá Organization/HVACBusiness sem endereço, WebSite, Service, BreadcrumbList e FAQPage somente quando a FAQ estiver visível na página. `areaServed` ficará centrado em São José dos Campos e os bairros serão apresentados como regiões de referência a confirmar no contato, nunca como promessa automática.
 
 O sitemap e o robots serão mantidos como arquivos públicos; `llms.txt` organizará fatos públicos sem prometer indexação em IA. Os CTAs abrirão os dois WhatsApps com mensagens contextualizadas e o Instagram oficial. Não haverá avaliações ou depoimentos até que existam dados reais autorizados.
 
