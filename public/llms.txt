@@ -5,10 +5,14 @@
 - Nome: A. J. P. Refrigeração
 - CNPJ: 46.046.700/0001-18
 - Atuação principal: São José dos Campos, São Paulo, Brasil
-- Modelo de atendimento: externo, diretamente no endereço do cliente
-- Não possui estabelecimento físico aberto ao público
-- Site: https://ajprefrigeracao.com.br/
+- Site: https://www.ajprefrigeracao.com.br/
 - Instagram: https://www.instagram.com/ajp_refrigeracao/
+
+## Área de atendimento
+
+- Município principal: São José dos Campos, São Paulo
+- Regiões e bairros publicados na página de atendimento: Zona Sul, Zona Norte, Região Central, Região Oeste e Região Leste
+- A disponibilidade deve ser confirmada diretamente com a empresa.
 
 ## Serviços
 
@@ -25,11 +29,11 @@
 
 ## Páginas principais
 
-- Início: https://ajprefrigeracao.com.br/
-- Instalação: https://ajprefrigeracao.com.br/instalacao-de-ar-condicionado/
-- Manutenção: https://ajprefrigeracao.com.br/manutencao-de-ar-condicionado/
-- Higienização: https://ajprefrigeracao.com.br/higienizacao-de-ar-condicionado/
-- Geladeira e freezer: https://ajprefrigeracao.com.br/conserto-de-geladeira-e-freezer/
-- Área de atendimento: https://ajprefrigeracao.com.br/area-de-atendimento/
+- Início: https://www.ajprefrigeracao.com.br/
+- Instalação: https://www.ajprefrigeracao.com.br/instalacao-de-ar-condicionado/
+- Manutenção: https://www.ajprefrigeracao.com.br/manutencao-de-ar-condicionado/
+- Higienização: https://www.ajprefrigeracao.com.br/higienizacao-de-ar-condicionado/
+- Geladeira e freezer: https://www.ajprefrigeracao.com.br/conserto-de-geladeira-e-freezer/
+- Área de atendimento: https://www.ajprefrigeracao.com.br/area-de-atendimento/
 
 > Este arquivo organiza informações públicas do site. Não é garantia de indexação ou posicionamento em mecanismos de busca ou IA.
