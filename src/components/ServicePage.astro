@@ -64,19 +64,8 @@ const jsonLd = [
         <ul class="fact-list">
           {service.problems.map((problem) => <li>{problem}</li>)}
         </ul>
-
-        <h2>Serviços realizados</h2>
-        <ul class="fact-list">
-          {service.highlights.map((highlight) => <li>{highlight}</li>)}
-        </ul>
-
-        <div id="duvidas">
-          <h2>Perguntas frequentes</h2>
-          <FAQ items={service.faqs} />
-        </div>
       </article>
-
-      <aside class="service-aside" aria-label="Contato">
+      <aside class="service-aside" aria-label="Contato e outros serviços">
         <div class="aside-card aside-card--accent">
           <h3>Solicite atendimento</h3>
           <p>Informe o equipamento, o serviço desejado e seu bairro em São José dos Campos.</p>
@@ -93,6 +82,13 @@ const jsonLd = [
           </ul>
         </div>
       </aside>
+    </div>
+  </section>
+
+  <section class="section section--tint" id="duvidas">
+    <div class="container split split--equal">
+      <div><h2>Perguntas frequentes</h2></div>
+      <FAQ items={service.faqs} />
     </div>
   </section>
 
