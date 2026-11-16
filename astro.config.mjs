@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://ajprefrigeracao.com.br',
+  site: 'https://www.ajprefrigeracao.com.br',
   output: 'static',
   trailingSlash: 'always',
   build: {
