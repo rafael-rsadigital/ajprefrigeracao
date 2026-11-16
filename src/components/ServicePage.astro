@@ -60,10 +60,12 @@ const jsonLd = [
     <div class="container service-layout">
       <article class="service-content">
         <p>{service.description}</p>
-        <h2>Quando solicitar {service.shortTitle.toLowerCase()}</h2>
+        <h2>Quando procurar {service.shortTitle.toLowerCase()}</h2>
         <ul class="fact-list">
           {service.problems.map((problem) => <li>{problem}</li>)}
         </ul>
+        <h2>Informações para solicitar o serviço</h2>
+        <p>Ao entrar em contato, informe a marca e o modelo do equipamento, descreva o que precisa e indique o bairro em São José dos Campos. Essas informações ajudam a entender a solicitação e verificar a disponibilidade do atendimento.</p>
       </article>
       <aside class="service-aside" aria-label="Contato e outros serviços">
         <div class="aside-card aside-card--accent">
