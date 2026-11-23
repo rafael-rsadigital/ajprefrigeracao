@@ -2,15 +2,9 @@
 import type { Service } from '../data/site';
 interface Props { service: Service; index: number }
 const { service, index } = Astro.props;
-const cardImages: Record<string, { src: string; alt: string }> = {
-  'instalacao-de-ar-condicionado': { src: '/images/instalacao-de-ar-condicionado-split.jpg', alt: 'Instalação de ar-condicionado split' },
-  'manutencao-de-ar-condicionado': { src: '/images/ar-condicionado-lg.jpg', alt: 'Aparelho de ar-condicionado para manutenção' },
-  'higienizacao-de-ar-condicionado': { src: '/images/higienizacao-de-ar-condicionado.jpg', alt: 'Higienização de ar-condicionado' },
-};
-const cardImage = cardImages[service.slug];
 ---
-<article class={`service-card service-card--${service.accent}`}>
-  {cardImage && <img class="service-card__image" src={cardImage.src} alt={cardImage.alt} loading="lazy" width="800" height="520" />}
+<article class={`service-card service-card--${service.accent}${service.image ? '' : ' service-card--text-only'}`}>
+  {service.image && <img class="service-card__image" src={service.image.src} alt={service.image.alt} loading="lazy" width="800" height="520" decoding="async" />}
   <span class="service-card__number">0{index + 1} · {service.eyebrow}</span>
   <h3>{service.title}</h3>
   <p>{service.summary}</p>
