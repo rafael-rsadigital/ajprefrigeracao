@@ -7,12 +7,6 @@ import type { Service } from '../data/site';
 
 interface Props { service: Service }
 const { service } = Astro.props;
-const serviceImages: Record<string, { src: string; alt: string }> = {
-  'instalacao-de-ar-condicionado': { src: '/images/projeto-instalacao-6-maquinas-ar-condicionado.jpg', alt: 'Projeto de instalação de seis máquinas de ar-condicionado' },
-  'manutencao-de-ar-condicionado': { src: '/images/ar-condicionado-preto-split.jpg', alt: 'Unidade interna de ar-condicionado split' },
-  'higienizacao-de-ar-condicionado': { src: '/images/higienizacao-de-ar-condicionado.jpg', alt: 'Higienização de aparelho de ar-condicionado' },
-};
-const serviceImage = serviceImages[service.slug];
 const canonicalPath = `/${service.slug}/`;
 const primaryWhatsApp = whatsAppUrl(company.whatsappPrimary, service.whatsappMessage);
 const secondaryWhatsApp = whatsAppUrl(company.whatsappSecondary, service.whatsappMessage);
@@ -65,7 +59,7 @@ const jsonLd = [
   <section class="section">
     <div class="container service-layout">
       <article class="service-content">
-        {serviceImage && <figure class="service-detail-image"><img src={serviceImage.src} alt={serviceImage.alt} loading="lazy" width="1200" height="800" /></figure>}
+        {service.image && <figure class="service-detail-image"><img src={service.image.src} alt={service.image.alt} loading="lazy" width="1200" height="800" decoding="async" /></figure>}
         <p>{service.description}</p>
         <h2>Quando procurar {service.shortTitle.toLowerCase()}</h2>
         <ul class="fact-list">
