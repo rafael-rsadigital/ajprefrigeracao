@@ -25,6 +25,8 @@ const {
 
 const canonical = new URL(canonicalPath, company.url).toString();
 const socialImage = new URL('/social-card.svg', company.url).toString();
+const businessImage = new URL('/images/ar-condicionado-instalado-residencial.jpg', company.url).toString();
+const googleBusinessProfile = 'https://maps.app.goo.gl/5e4QZ7EFmxRY7Y5H7';
 const organizationId = `${company.url}/#organization`;
 const websiteId = `${company.url}/#website`;
 
@@ -46,12 +48,12 @@ const baseSchemas = [
     '@type': 'HVACBusiness',
     '@id': organizationId,
     name: company.name,
-    legalName: company.name,
     url: `${company.url}/`,
     taxID: company.cnpj,
     telephone: '+55 12 99617-5371',
-    image: socialImage,
-    sameAs: [company.instagramUrl],
+    image: businessImage,
+    sameAs: [company.instagramUrl, googleBusinessProfile],
+    hasMap: googleBusinessProfile,
     areaServed,
     knowsAbout: [
       'Instalação de ar-condicionado',
