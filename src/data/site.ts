@@ -105,6 +105,7 @@ export const services: Service[] = [
     description: 'Geladeiras e freezers que não refrigeram ou congelam corretamente, apresentam ruídos ou deixam de ligar precisam de avaliação técnica. A A. J. P. Refrigeração realiza conserto desses equipamentos em São José dos Campos e região. Ao entrar em contato, informe o tipo de aparelho, a marca, o modelo e o defeito observado.',
     icon: '▣',
     accent: 'blue',
+    image: { src: '/images/freezer-e-geladeira.png', alt: 'Geladeira e freezer para serviço de refrigeração' },
     problems: ['Geladeira que não está refrigerando', 'Freezer que não está congelando corretamente', 'Equipamento que parou de funcionar ou apresenta ruídos'],
     highlights: ['Conserto de geladeiras', 'Conserto de freezers'],
     faqs: [
