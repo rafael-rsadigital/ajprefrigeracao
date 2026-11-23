@@ -9,7 +9,7 @@ interface Props { service: Service }
 const { service } = Astro.props;
 const serviceImages: Record<string, { src: string; alt: string }> = {
   'instalacao-de-ar-condicionado': { src: '/images/projeto-instalacao-6-maquinas-ar-condicionado.jpg', alt: 'Projeto de instalação de seis máquinas de ar-condicionado' },
-  'manutencao-de-ar-condicionado': { src: '/images/ar-condicionado-central.jpg', alt: 'Equipamento de ar-condicionado em instalação comercial' },
+  'manutencao-de-ar-condicionado': { src: '/images/ar-condicionado-preto-split.jpg', alt: 'Unidade interna de ar-condicionado split' },
   'higienizacao-de-ar-condicionado': { src: '/images/higienizacao-de-ar-condicionado.jpg', alt: 'Higienização de aparelho de ar-condicionado' },
 };
 const serviceImage = serviceImages[service.slug];
