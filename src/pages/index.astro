@@ -40,14 +40,9 @@ const jsonLd = [
           <a class="button button--secondary" href="#servicos">Ver serviços <span aria-hidden="true">↓</span></a>
         </div>
       </div>
-      <div class="hero-visual" aria-label="Ilustração abstrata de fluxo de ar e refrigeração" role="img">
-        <span class="float-label float-label--one">refrigeração · climatização</span>
-        <div class="cooling-card">
-          <div class="cooling-top"><span>AJP / REFRIGERAÇÃO</span><span class="cooling-status">SJC · SP</span></div>
-          <div class="unit"><span class="unit-core" aria-hidden="true"></span><span class="air-lines" aria-hidden="true"><i></i><i></i><i></i></span></div>
-          <div class="cooling-bottom"><div><strong>Ar-condicionado</strong><span>Instalação e manutenção</span></div><div><strong>Refrigeração</strong><span>Geladeiras e freezers</span></div></div>
-        </div>
-        <span class="float-label float-label--two">A. J. P. ↗</span>
+      <div class="hero-visual hero-visual--photo">
+        <img src="/images/ar-condicionado-instalado-residencial.jpg" alt="Ar-condicionado split instalado em ambiente residencial" width="1200" height="900" fetchpriority="high" />
+        <span class="photo-caption">Instalação de ar-condicionado · São José dos Campos</span>
       </div>
     </div>
   </section>
@@ -76,6 +71,32 @@ const jsonLd = [
       </div>
       <div class="grid-3">
         {services.map((service, index) => <ServiceCard service={service} index={index} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint" aria-labelledby="portfolio-title">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-heading">
+          <p class="section-kicker">Serviços realizados</p>
+          <h2 id="portfolio-title">Instalações e serviços em campo</h2>
+        </div>
+        <p>Alguns registros de instalações e atendimentos realizados pela AJP Refrigeração.</p>
+      </div>
+      <div class="photo-gallery">
+        <figure class="photo-gallery__item photo-gallery__item--featured">
+          <img src="/images/projeto-instalacao-6-maquinas-ar-condicionado.jpg" alt="Projeto de instalação de seis máquinas de ar-condicionado" loading="lazy" width="1200" height="800" />
+          <figcaption>Projeto com instalação de seis equipamentos</figcaption>
+        </figure>
+        <figure class="photo-gallery__item">
+          <img src="/images/instalacao-ar-condicionado-apartamento.jpg" alt="Instalação de ar-condicionado em apartamento" loading="lazy" width="900" height="700" />
+          <figcaption>Instalação residencial</figcaption>
+        </figure>
+        <figure class="photo-gallery__item">
+          <img src="/images/higienizacao-de-ar-condicionado.jpg" alt="Higienização de aparelho de ar-condicionado" loading="lazy" width="900" height="700" />
+          <figcaption>Higienização de ar-condicionado</figcaption>
+        </figure>
       </div>
     </div>
   </section>
