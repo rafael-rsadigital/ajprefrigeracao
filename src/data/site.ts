@@ -31,6 +31,7 @@ export type Service = {
   description: string;
   icon: string;
   accent: 'green' | 'blue' | 'yellow';
+  image?: { src: string; alt: string };
   problems: string[];
   highlights: string[];
   faqs: { question: string; answer: string }[];
@@ -47,6 +48,7 @@ export const services: Service[] = [
     description: 'A A. J. P. Refrigeração realiza instalação de ar-condicionado em São José dos Campos e região. Para consultar o serviço, informe pelo WhatsApp a marca e o modelo do aparelho, sua capacidade em BTUs, o endereço do local e se já existe infraestrutura para instalação.',
     icon: '↗',
     accent: 'green',
+    image: { src: '/images/instalacao-ar-condicionado-apartamento.jpg', alt: 'Instalação de ar-condicionado em apartamento' },
     problems: ['Compra de um aparelho novo', 'Instalação de um equipamento que ainda não está em uso', 'Substituição ou mudança de local do aparelho'],
     highlights: ['Instalação de ar-condicionado'],
     faqs: [
@@ -65,6 +67,7 @@ export const services: Service[] = [
     description: 'A manutenção de ar-condicionado permite avaliar falhas e alterações no funcionamento do equipamento. A A. J. P. Refrigeração atende em São José dos Campos e região. Ao solicitar uma avaliação, descreva o problema, informe a marca e o modelo e diga há quanto tempo o aparelho apresenta o sintoma.',
     icon: '◌',
     accent: 'blue',
+    image: { src: '/images/ar-condicionado-lg.jpg', alt: 'Equipamento de ar-condicionado instalado' },
     problems: ['Ar-condicionado que não liga', 'Equipamento que apresenta ruídos ou falhas', 'Aparelho com desempenho diferente do habitual'],
     highlights: ['Manutenção de ar-condicionado', 'Manutenção preventiva e corretiva'],
     faqs: [
@@ -83,6 +86,7 @@ export const services: Service[] = [
     description: 'A higienização de ar-condicionado é voltada à limpeza do equipamento e de seus componentes, conforme o tipo de aparelho e a necessidade identificada. A A. J. P. Refrigeração realiza o serviço em São José dos Campos e região. Informe pelo WhatsApp o modelo do aparelho e o local onde está instalado.',
     icon: '✦',
     accent: 'yellow',
+    image: { src: '/images/higienizacao-de-ar-condicionado.jpg', alt: 'Serviço de higienização de ar-condicionado' },
     problems: ['Filtros e partes acessíveis com acúmulo de sujeira', 'Limpeza periódica do equipamento', 'Aparelho que precisa de higienização'],
     highlights: ['Higienização de ar-condicionado', 'Limpeza de equipamentos'],
     faqs: [
